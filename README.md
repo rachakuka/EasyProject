@@ -37,11 +37,36 @@ Foi utilizado um modelo do Github para a organização da parte AngularJS: https
 
 https://docs.microsoft.com/en-us/ef/ef6/saving/transactions
 
-Imagens
+Imagens Obs: Não coloquei a aba network em todos os prints pois quero dar foco no layout do sistema, mas criei uma pasta com todos os prints com a aba network aberta (/printsNetwork)
 
-Listagem de candidatos vazia
+Tela inicial
+
+![alt text](prints/TelaInicial.PNG)
+
+Listagem de candidatos
+
+![alt text](prints/Lista.PNG)
+
+Cadastrando página 1
+
+![alt text](prints/TelaDeCadastro.PNG)
+
+Cadastrando página 2
+
+![alt text](prints/TelaDeCadastro2.PNG)
+
+Cadastrando página 3
+
+![alt text](prints/TelaDeCadastro3.PNG)
 
 
+Confirmar dados cadastrados
+
+![alt text](prints/TelaDeConfirmacaoDeCadastro.PNG)
+
+Editar candidato cadastrado
+
+![alt text](prints/EdicaoDaLista.PNG)
 
 
 
