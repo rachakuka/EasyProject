@@ -1,0 +1,500 @@
+﻿<div class="page-section gallery-single-page">
+    <div class="gallery-single-warp">
+        <div class="row">
+            <form class="contact-form" name="AddNewForm1" novalidate>
+
+                <div class="row">
+                    <div class="col-xl-6 p-0" style="padding: 2% !important;">
+
+
+                        <div class="form-group">
+                            <input name="EditIDProgramador" ng-model="EditIDProgramador" type="hidden" placeholder="Programador" />
+                        </div>
+                        <div class="form-group">
+                            <input name="EditNome" ng-model="EditNome" maxlength="28" type="text" placeholder="Nome*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditNome.$dirty && AddNewForm1.EditNome.$invalid">Nome obrigatório</span>
+                        </div>
+                        <div class="form-group">
+                            <input name="EditEMail" ng-model="EditEMail" maxlength="120" type="email" placeholder="E-mail*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditEMail.$dirty && AddNewForm1.EditEMail.$invalid">Formato do e-mail é incorreto</span>
+                        </div>
+
+                        <div class="form-group">
+                            <input name="EditSkype" ng-model="EditSkype" maxlength="120" type="text" placeholder="Skype*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditSkype.$dirty && AddNewForm1.EditSkype.$invalid">Skype obrigatório</span>
+                        </div>
+                        <div class="form-group">
+                            <input name="EditTelefone" ng-model="EditTelefone" maxlength="28" type="number" placeholder="Telefone*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditTelefone.$dirty && AddNewForm1.EditTelefone.$invalid">Telefone obrigatório limite máximo de caracteres (28)</span>
+                        </div>
+                        <div class="form-group">
+                            <input name="EditLinkedin" ng-model="EditLinkedin" maxlength="120" type="text" placeholder="Linkedin*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditLinkedin.$dirty && AddNewForm1.EditLinkedin.$invalid">Linkdin obrigatório</span>
+                        </div>
+                        <div class="form-group">
+                            <input name="EditCidade" ng-model="EditCidade" maxlength="120" type="text" placeholder="Cidade*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditCidade.$dirty && AddNewForm1.EditCidade.$invalid">Cidade obrigatória</span>
+                        </div>
+                        <div class="form-group">
+                            <input name="EditEstado" ng-model="EditEstado" maxlength="120" type="text" placeholder="Estado*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditEstado.$dirty && AddNewForm1.EditEstado.$invalid">Estado obrigatório</span>
+                        </div>
+                        <span class="span2">Qual é sua disponibilidade para trabalhar hoje?</span>
+                        <span class="msg" style="color:red;" ng-show="AddNewForm1.EditDisponibilidadeTrabalho.$dirty && AddNewForm1.EditDisponibilidadeTrabalho.$invalid">Selecione pelo menos um campo (Disponibilidade de trabalho)</span>
+                        <span class="msg" style="color:red;" ng-show="AddNewForm1.EditMelhorHorario.$dirty && AddNewForm1.EditMelhorHorario.$invalid">Selecione pelo menos um campo (Melhor horário para trabalhar)</span>
+
+                        <label class="checksRadios">
+                            Até 4 horas por dia
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="1" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            De 4 á 6 horas por dia
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="2" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            De 6 á 8 horas por dia
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="3" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Acima de 8 horas por dia (tem certeza?)
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="4" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Apenas finais de semana
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="5" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Horário a definir (Qualquer horário)
+                            <input type="radio" name="EditDisponibilidadeTrabalho" value="6" ng-model="EditDisponibilidadeTrabalho">
+                            <span class="checkmark"></span>
+                        </label>
+
+                        <span class="span2">Pra você qual é o melhor horário para trabalhar?</span>
+                        <span class="msg" style="color:red;" ng-show="AddNewForm1.EditMelhorHorario.$dirty && AddNewForm1.EditMelhorHorario.$invalid">Selecione pelo menos um campo</span>
+
+                        <label class="checksRadios">
+                            Manhã (de 08:00 ás 12:00)
+                            <input type="radio" name="EditMelhorHorario" value="1" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Tarde (de 13:00 ás 18:00)
+                            <input type="radio" name="EditMelhorHorario" value="2" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Noite (de 19:00 as 22:00)
+                            <input type="radio" name="EditMelhorHorario" value="3" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Madrugada (de 22:00 em diante)
+                            <input type="radio" name="EditMelhorHorario" value="4" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Comercial (de 08:00 as 18:00)
+                            <input type="radio" name="EditMelhorHorario" value="5" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checksRadios">
+                            Horário a definir (Qualquer horário)
+                            <input type="radio" name="EditMelhorHorario" value="6" ng-model="EditMelhorHorario">
+                            <span class="checkmark"></span>
+                        </label>
+
+
+                        <div class="form-group">
+                            <input name="EditPretensao" ng-model="EditPretensao" maxlength="3" type="number" placeholder="Qual sua pretensão salarial por hora?*" autocomplete="off" required />
+                            <span class="msg" style="color:red;" ng-show="AddNewForm1.EditPretensao.$dirty && AddNewForm1.EditPretensao.$invalid">Pretenção salárial obrigatório limite máximo de caracteres (3)</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 p-0" style="padding: 2% !important;">
+                        <span class="span2">Avalie-se de 0 a 5 quanto aos conhecimentos especificados abaixo, e tudo bem se não souber de muitas coisas, o importante é que seja sincero!</span>
+                        <hr>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    Ionic
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditIonic.$dirty && AddNewForm1.EditIonic.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" value="1" name="EditIonic" ng-model="EditIonic">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" value="2" name="EditIonic" ng-model="EditIonic">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" value="3" name="EditIonic" ng-model="EditIonic">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" value="4" name="EditIonic" ng-model="EditIonic">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" value="5" name="EditIonic" ng-model="EditIonic">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    Reactjs
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditReactjs.$dirty && AddNewForm1.EditReactjs.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditReactjs" checked="checked" value="1" ng-model="EditReactjs">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditReactjs" value="2" ng-model="EditReactjs">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditReactjs" value="3" ng-model="EditReactjs">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditReactjs" value="4" ng-model="EditReactjs">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditReactjs" value="5" ng-model="EditReactjs">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    React Native
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditReactnative.$dirty && AddNewForm1.EditReactnative.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditReactnative" checked="checked" value="1" ng-model="EditReactnative">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditReactnative" value="2" ng-model="EditReactnative">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditReactnative" value="3" ng-model="EditReactnative">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditReactnative" value="4" ng-model="EditReactnative">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditReactnative" value="5" ng-model="EditReactnative">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    Android
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditAndroid.$dirty && AddNewForm1.EditAndroid.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditAndroid" checked="checked" value="1" ng-model="EditAndroid">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditAndroid" value="2" ng-model="EditAndroid">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditAndroid" value="3" ng-model="EditAndroid">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditAndroid" value="4" ng-model="EditAndroid">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditAndroid" value="5" ng-model="EditAndroid">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    IOS
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditIOS.$dirty && AddNewForm1.EditIOS.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditIOS" checked="checked" value="1" ng-model="EditIOS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditIOS" value="2" ng-model="EditIOS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditIOS" value="3" ng-model="EditIOS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditIOS" value="4" ng-model="EditIOS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditIOS" value="5" ng-model="EditIOS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    HTML
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditHTML.$dirty && AddNewForm1.EditHTML.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditHTML" checked="checked" value="1" ng-model="EditHTML">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditHTML" value="2" ng-model="EditHTML">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditHTML" value="3" ng-model="EditHTML">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditHTML" value="4" ng-model="EditHTML">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditHTML" value="5" ng-model="EditHTML">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    CSS
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditCSS.$dirty && AddNewForm1.EditCSS.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditCSS" checked="checked" value="1" ng-model="EditCSS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditCSS" value="2" ng-model="EditCSS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditCSS" value="3" ng-model="EditCSS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditCSS" value="4" ng-model="EditCSS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditCSS" value="5" ng-model="EditCSS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    Bootstrap
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditBootstrap.$dirty && AddNewForm1.EditBootstrap.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditBootstrap" checked="checked" value="1" ng-model="EditBootstrap">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditBootstrap" value="2" ng-model="EditBootstrap">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditBootstrap" value="3" ng-model="EditBootstrap">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditBootstrap" value="4" ng-model="EditBootstrap">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditBootstrap" value="5" ng-model="EditBootstrap">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    Jquery
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditJquery.$dirty && AddNewForm1.EditJquery.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditJquery" checked="checked" value="1" ng-model="EditJquery">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditJquery" value="2" ng-model="EditJquery">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditJquery" value="3" ng-model="EditJquery">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditJquery" value="4" ng-model="EditJquery">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditJquery" value="5" ng-model="EditJquery">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-xl-12">
+                                <span class="span2">
+                                    AngularJS
+                                </span>
+                                <span class="msg" style="color:red;" ng-show="AddNewForm1.EditAngularJS.$dirty && AddNewForm1.EditAngularJS.$invalid">Selecione uma classificação</span>
+                                <div class="form-group">
+                                    <label class="checksRadios epleft col-xl-2">
+                                        1
+                                        <input type="radio" name="EditAngularJS" checked="checked" value="1" ng-model="EditAngularJS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        2
+                                        <input type="radio" name="EditAngularJS" value="2" ng-model="EditAngularJS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        3
+                                        <input type="radio" name="EditAngularJS" value="3" ng-model="EditAngularJS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        4
+                                        <input type="radio" name="EditAngularJS" value="4" ng-model="EditAngularJS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                    <label class="checksRadios epleft col-xl-2">
+                                        5
+                                        <input type="radio" name="EditAngularJS" value="5" ng-model="EditAngularJS">
+                                        <span class="radioMark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <textarea name="EditOutro" ng-model="EditOutro" maxlength="500" type="text" placeholder="Outro? Conte para nos e se auto avalie ainda de 0 a 5." autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xl-2">
+                &nbsp;
+            </div>
+            <div class="col-xl-8">
+                <div style="margin: auto; width: 60%;">
+                    <button type="button" class="site-btn-cancel" data-dismiss="modal" onclick="location.href='@Url.Action("Listar", "Programador")';return false;">
+                        Cancelar
+                    </button>
+                    <button data-dismiss="modal" ng-mouseover="AddNewForm1.$invalid" ng-disabled="AddNewForm1.$invalid" type="button" class="site-btn" id="btnSave" ng-click="updateEdit()">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-2">
+            </div>
+        </div>
+    </div>
+</div>

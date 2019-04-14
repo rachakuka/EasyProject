@@ -1,0 +1,37 @@
+﻿
+<form class="contact-form" name="AddNewForm1" novalidate>
+    <div ng-hide="DadosPessoais">
+        <div class="form-group">
+            <input name="IDProgramador" ng-model="IDProgramador" type="hidden" placeholder="Programador" />
+        </div>
+        <div class="form-group">
+            <input name="Nome" ng-model="Nome" maxlength="28" type="text" placeholder="Nome*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Nome.$dirty && AddNewForm1.Nome.$invalid">Nome obrigatório</span>
+        </div>
+        <div class="form-group">
+            <input name="EMail" ng-model="EMail" maxlength="120" type="email" placeholder="E-mail*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.EMail.$dirty && AddNewForm1.EMail.$invalid">Formato do e-mail é incorreto</span>
+        </div>
+
+        <div class="form-group">
+            <input name="Skype" ng-model="Skype" maxlength="120" type="text" placeholder="Skype*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Skype.$dirty && AddNewForm1.Skype.$invalid">Skype obrigatório</span>
+        </div>
+        <div class="form-group">
+            <input name="Telefone" ng-model="Telefone" maxlength="28" type="number" placeholder="Telefone*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Telefone.$dirty && AddNewForm1.Telefone.$invalid">Telefone obrigatório limite máximo de caracteres (28)</span>
+        </div>
+        <div class="form-group">
+            <input name="Linkedin" ng-model="Linkedin" maxlength="120" type="text" placeholder="Linkedin*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Linkedin.$dirty && AddNewForm1.Linkedin.$invalid">Linkdin obrigatório</span>
+        </div>
+        <div class="form-group">
+            <input name="Cidade" ng-model="Cidade" maxlength="120" type="text" placeholder="Cidade*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Cidade.$dirty && AddNewForm1.Cidade.$invalid">Cidade obrigatória</span>
+        </div>
+        <div class="form-group">
+            <input name="Estado" ng-model="Estado" maxlength="120" type="text" placeholder="Estado*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm1.Estado.$dirty && AddNewForm1.Estado.$invalid">Estado obrigatório</span>
+        </div>
+    </div>
+</form>

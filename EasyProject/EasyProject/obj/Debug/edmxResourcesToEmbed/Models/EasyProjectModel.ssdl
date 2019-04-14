@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Conhecimento">
+    <Key>
+      <PropertyRef Name="IDProgramador" />
+    </Key>
+    <Property Name="IDProgramador" Type="bigint" Nullable="false" />
+    <Property Name="Ionic" Type="int" Nullable="false" />
+    <Property Name="Reactjs" Type="int" Nullable="false" />
+    <Property Name="Reactnative" Type="int" Nullable="false" />
+    <Property Name="Android" Type="int" Nullable="false" />
+    <Property Name="IOS" Type="int" Nullable="false" />
+    <Property Name="HTML" Type="int" Nullable="false" />
+    <Property Name="CSS" Type="int" Nullable="false" />
+    <Property Name="Bootstrap" Type="int" Nullable="false" />
+    <Property Name="Jquery" Type="int" Nullable="false" />
+    <Property Name="AngularJS" Type="int" Nullable="false" />
+    <Property Name="Outro" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Programador">
+    <Key>
+      <PropertyRef Name="IDProgramador" />
+    </Key>
+    <Property Name="IDProgramador" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EMail" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Skype" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Telefone" Type="bigint" Nullable="false" />
+    <Property Name="Linkedin" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Cidade" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Estado" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="DisponibilidadeTrabalho" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="MelhorHorario" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Pretensao" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_CONHECIM_REFERENCE_PROGRAMA">
+    <End Role="Programador" Type="Self.Programador" Multiplicity="1" />
+    <End Role="Conhecimento" Type="Self.Conhecimento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Programador">
+        <PropertyRef Name="IDProgramador" />
+      </Principal>
+      <Dependent Role="Conhecimento">
+        <PropertyRef Name="IDProgramador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EasyProjectModelStoreContainer">
+    <EntitySet Name="Conhecimento" EntityType="Self.Conhecimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programador" EntityType="Self.Programador" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_CONHECIM_REFERENCE_PROGRAMA" Association="Self.FK_CONHECIM_REFERENCE_PROGRAMA">
+      <End Role="Programador" EntitySet="Programador" />
+      <End Role="Conhecimento" EntitySet="Conhecimento" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

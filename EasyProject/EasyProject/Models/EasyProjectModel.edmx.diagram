@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e42b32da3cf14e049e3d4a8343f6eb2c" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="EasyProjectModel.Conhecimento" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="EasyProjectModel.Programador" Width="1.5" PointX="0.75" PointY="1.125" />
+        <AssociationConnector Association="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EasyProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EasyProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Conhecimentoes" EntityType="EasyProjectModel.Conhecimento" />
+    <EntitySet Name="Programadors" EntityType="EasyProjectModel.Programador" />
+    <AssociationSet Name="FK_CONHECIM_REFERENCE_PROGRAMA" Association="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA">
+      <End Role="Programador" EntitySet="Programadors" />
+      <End Role="Conhecimento" EntitySet="Conhecimentoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Conhecimento">
+    <Key>
+      <PropertyRef Name="IDProgramador" />
+    </Key>
+    <Property Name="IDProgramador" Type="Int64" Nullable="false" />
+    <Property Name="Ionic" Type="Int32" Nullable="false" />
+    <Property Name="Reactjs" Type="Int32" Nullable="false" />
+    <Property Name="Reactnative" Type="Int32" Nullable="false" />
+    <Property Name="Android" Type="Int32" Nullable="false" />
+    <Property Name="IOS" Type="Int32" Nullable="false" />
+    <Property Name="HTML" Type="Int32" Nullable="false" />
+    <Property Name="CSS" Type="Int32" Nullable="false" />
+    <Property Name="Bootstrap" Type="Int32" Nullable="false" />
+    <Property Name="Jquery" Type="Int32" Nullable="false" />
+    <Property Name="AngularJS" Type="Int32" Nullable="false" />
+    <Property Name="Outro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Programador" Relationship="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA" FromRole="Conhecimento" ToRole="Programador" />
+  </EntityType>
+  <EntityType Name="Programador">
+    <Key>
+      <PropertyRef Name="IDProgramador" />
+    </Key>
+    <Property Name="IDProgramador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMail" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Skype" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Telefone" Type="Int64" Nullable="false" />
+    <Property Name="Linkedin" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="DisponibilidadeTrabalho" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="MelhorHorario" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Pretensao" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Conhecimento" Relationship="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA" FromRole="Programador" ToRole="Conhecimento" />
+  </EntityType>
+  <Association Name="FK_CONHECIM_REFERENCE_PROGRAMA">
+    <End Type="EasyProjectModel.Programador" Role="Programador" Multiplicity="1" />
+    <End Type="EasyProjectModel.Conhecimento" Role="Conhecimento" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Programador">
+        <PropertyRef Name="IDProgramador" />
+      </Principal>
+      <Dependent Role="Conhecimento">
+        <PropertyRef Name="IDProgramador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

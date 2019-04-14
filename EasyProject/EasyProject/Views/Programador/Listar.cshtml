@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Programador";
+}
+<div ng-controller="programador-controller">
+    <div ng-hide="ListarProgramador">
+        <form class="search-moderl-form ng-pristine ng-valid">
+            <input type="text" id="search-input" ng-model="search" class="col-xl-12 p-0" placeholder="Procure programadores">
+        </form>
+        <br />
+        <br />
+        <div class="page-section " id="ListaProgramadorPage">
+            <div class="contact-warp">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="col-xl-6" style="float:left; height:700px;" ng-repeat="prog in Programadores | filter:search | orderBy:'-IDProgramador'">
+                            <div class="gallery-single-text">
+                                <span>{{prog.EMail}}</span>
+                                <h2>{{prog.Nome}}</h2>
+                                <ul>
+                                    <li><span>Skype:</span>{{prog.Skype}}</li>
+                                    <li><span>Telefone:</span>{{prog.Telefone}}</li>
+                                    <li><span>Linkedin:</span>{{prog.Linkedin}}</li>
+                                    <li><span>Cidade:</span>{{prog.Cidade}} {{prog.Cidade != null && prog.Cidade != "" ? prog.Estado != null ? (' - ' + prog.Estado) : "" : ""}}</li>
+                                    <li><span>Trabalho:</span>{{prog.DisponibilidadeTrabalho == 1 ? "Até 4 horas por dia" : prog.DisponibilidadeTrabalho == 2 ? "De 4 á 6 horas por dia" : prog.DisponibilidadeTrabalho == 3 ? "De 6 á 8 horas por dia" : prog.DisponibilidadeTrabalho == 4 ? "Acima de 8 horas por dia (tem certeza?)" : prog.DisponibilidadeTrabalho == 5 ? "Apenas finais de semana" : prog.DisponibilidadeTrabalho == 6 ? "Horário a definir (Qualquer horário)" : ""}}</li>
+                                    <li><span>Horário:</span>{{prog.MelhorHorario == 1 ? "Manhã (de 08:00 ás 12:00)" : prog.MelhorHorario == 2 ? "Tarde (de 13:00 ás 18:00)" : prog.MelhorHorario == 3 ? "Noite (de 19:00 as 22:00)" : prog.MelhorHorario == 4 ? "Madrugada (de 22:00 em diante)" : prog.MelhorHorario == 5 ? "Comercial (de 08:00 as 18:00)" : prog.MelhorHorario == 6 ? "Horário a definir (Qualquer horário)" : ""}}</li>
+                                    <li><span>Pretenção:</span>{{prog.Pretensao != null && prog.Pretensao != '' ? ('R$ ' + prog.Pretensao + ',00') : ''}} {{prog.Pretensao != null && prog.Pretensao != '' ? prog.DisponibilidadeTrabalho == 1 ? ' / Valor Baseado nas horas minimas: R$ ' + (prog.Pretensao * 4 * 20) + ',00 mês' : prog.DisponibilidadeTrabalho == 2 ? ' / Valor Baseado nas horas minimas: R$ ' + (prog.Pretensao * 6 * 20) + ',00 mês' : prog.DisponibilidadeTrabalho == 3 ? ' / Valor Baseado nas horas minimas: R$ ' + (prog.Pretensao * 8 * 20) + ',00 mês' : '' : ''}}</li>
+                                    <li>
+                                        <button type="button" class="site-btn-cancel" data-dismiss="modal" ng-click="getForUpdateEdit(prog)">
+                                            Editar
+                                        </button>
+                                        <button type="button" class="site-btn-cancel" data-dismiss="modal" ng-click="delete(prog)">
+                                            Deletar
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="!ListarProgramador">
+        @Html.Partial("Editar")
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/app/Services/ProgramadorServices.js"></script>
+    <script src="~/Scripts/app/Controller/ProgramadorController.js"></script>
+}

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EasyProjectModelStoreContainer" CdmEntityContainer="EasyProjectEntities">
+    <EntitySetMapping Name="Conhecimentoes">
+      <EntityTypeMapping TypeName="EasyProjectModel.Conhecimento">
+        <MappingFragment StoreEntitySet="Conhecimento">
+          <ScalarProperty Name="Outro" ColumnName="Outro" />
+          <ScalarProperty Name="AngularJS" ColumnName="AngularJS" />
+          <ScalarProperty Name="Jquery" ColumnName="Jquery" />
+          <ScalarProperty Name="Bootstrap" ColumnName="Bootstrap" />
+          <ScalarProperty Name="CSS" ColumnName="CSS" />
+          <ScalarProperty Name="HTML" ColumnName="HTML" />
+          <ScalarProperty Name="IOS" ColumnName="IOS" />
+          <ScalarProperty Name="Android" ColumnName="Android" />
+          <ScalarProperty Name="Reactnative" ColumnName="Reactnative" />
+          <ScalarProperty Name="Reactjs" ColumnName="Reactjs" />
+          <ScalarProperty Name="Ionic" ColumnName="Ionic" />
+          <ScalarProperty Name="IDProgramador" ColumnName="IDProgramador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programadors">
+      <EntityTypeMapping TypeName="EasyProjectModel.Programador">
+        <MappingFragment StoreEntitySet="Programador">
+          <ScalarProperty Name="Pretensao" ColumnName="Pretensao" />
+          <ScalarProperty Name="MelhorHorario" ColumnName="MelhorHorario" />
+          <ScalarProperty Name="DisponibilidadeTrabalho" ColumnName="DisponibilidadeTrabalho" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Skype" ColumnName="Skype" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="IDProgramador" ColumnName="IDProgramador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

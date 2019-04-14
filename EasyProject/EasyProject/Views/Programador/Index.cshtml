@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Programador";
+}
+
+<div class="page-section gallery-single-page" id="ProgramadorPage">
+    <div class="gallery-single-warp" ng-controller="programador-controller">
+        @Html.Partial("ConfirmarDados")
+
+        <div ng-hide="!ConfirmarDados">
+            <div class="row">
+                <div class="gallery-single-text">
+                    <span>Preencha o formulário</span>
+                    <h2>
+                        {{DadosPessoais == false ? 'DADOS PESSOAIS' : InformacaoDeTrabalho == false ? 'INFORMAÇÕES DE TRABALHO' : Conhecimentos == false ? 'CONHECIMENTOS' : 'CADASTRO DE PROFICIONAL'}}
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 p-0" style="padding: 1% !important;">
+
+                    @Html.Partial("DadosPessoais")
+
+                    @Html.Partial("InformacoesDeTrabalho")
+
+                    @Html.Partial("Conhecimentos")
+
+                </div>
+
+
+                <div class="col-xl-6 p-0">
+                    <div class="gallery-single-text">
+                        <span>{{EMail}}</span>
+                        <h2>{{Nome}}</h2>
+                        <ul>
+                            <li><span>Skype:</span>{{Skype}}</li>
+                            <li><span>Telefone:</span>{{Telefone}}</li>
+                            <li><span>Linkedin:</span>{{Linkedin}}</li>
+                            <li><span>Cidade:</span>{{Cidade}} {{Cidade != null && Cidade != "" ? Estado != null ? (' - ' + Estado) : "" : ""}}</li>
+                            <li><span>Trabalho:</span>{{DisponibilidadeTrabalho == 1 ? "Até 4 horas por dia" : DisponibilidadeTrabalho == 2 ? "De 4 á 6 horas por dia" : DisponibilidadeTrabalho == 3 ? "De 6 á 8 horas por dia" : DisponibilidadeTrabalho == 4 ? "Acima de 8 horas por dia (tem certeza?)" : DisponibilidadeTrabalho == 5 ? "Apenas finais de semana" : DisponibilidadeTrabalho == 6 ? "Horário a definir (Qualquer horário)" : ""}}</li>
+                            <li><span>Horário:</span>{{MelhorHorario == 1 ? "Manhã (de 08:00 ás 12:00)" : MelhorHorario == 2 ? "Tarde (de 13:00 ás 18:00)" : MelhorHorario == 3 ? "Noite (de 19:00 as 22:00)" : MelhorHorario == 4 ? "Madrugada (de 22:00 em diante)" : MelhorHorario == 5 ? "Comercial (de 08:00 as 18:00)" : MelhorHorario == 6 ? "Horário a definir (Qualquer horário)" : ""}}</li>
+                            <li><span>Pretenção:</span>{{Pretensao != null && Pretensao != '' ? ('R$ ' + Pretensao + ',00') : ''}} {{Pretensao != null && Pretensao != '' ? DisponibilidadeTrabalho == 1 ? ' / Valor Baseado nas horas minimas: R$ ' + (Pretensao * 4 * 20) + ',00 mês' : DisponibilidadeTrabalho == 2 ? ' / Valor Baseado nas horas minimas: R$ ' + (Pretensao * 6 * 20) + ',00 mês' : DisponibilidadeTrabalho == 3 ? ' / Valor Baseado nas horas minimas: R$ ' + (Pretensao * 8 * 20) + ',00 mês' : '' : ''}}</li>
+                        </ul>
+                        <div ng-hide="Conhecimentos">
+                            <span>Conhecimentos</span>
+                            <ul>
+                                <li><span>Ionic:</span>{{Ionic != null && Pretensao != '' ? (Ionic == 1 ? 'Não conheço' : Ionic == 2 ? 'Conheço um pouco' :  Ionic == 3 ? 'Sei fazer alguma coisa' : Ionic == 4 ? 'Sou bom' : Ionic == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Reactjs:</span>{{Reactjs != null && Pretensao != '' ? (Reactjs == 1 ? 'Não conheço' : Reactjs == 2 ? 'Conheço um pouco' :  Reactjs == 3 ? 'Sei fazer alguma coisa' : Reactjs == 4 ? 'Sou bom' : Reactjs == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Reactnative:</span>{{Reactnative != null && Pretensao != '' ? (Reactnative == 1 ? 'Não conheço' : Reactnative == 2 ? 'Conheço um pouco' :  Reactnative == 3 ? 'Sei fazer alguma coisa' : Reactnative == 4 ? 'Sou bom' : Reactnative == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Android:</span>{{Android != null && Pretensao != '' ? (Android == 1 ? 'Não conheço' : Android == 2 ? 'Conheço um pouco' :  Android == 3 ? 'Sei fazer alguma coisa' : Android == 4 ? 'Sou bom' : Android == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>IOS:</span>{{IOS != null && Pretensao != '' ? (IOS == 1 ? 'Não conheço' : IOS == 2 ? 'Conheço um pouco' :  IOS == 3 ? 'Sei fazer alguma coisa' : IOS == 4 ? 'Sou bom' : IOS == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>HTML:</span>{{HTML != null && Pretensao != '' ? (HTML == 1 ? 'Não conheço' : HTML == 2 ? 'Conheço um pouco' :  HTML == 3 ? 'Sei fazer alguma coisa' : HTML == 4 ? 'Sou bom' : HTML == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>CSS:</span>{{CSS != null && Pretensao != '' ? (CSS == 1 ? 'Não conheço' : CSS == 2 ? 'Conheço um pouco' :  CSS == 3 ? 'Sei fazer alguma coisa' : CSS == 4 ? 'Sou bom' : CSS == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Bootstrap:</span>{{Bootstrap != null && Pretensao != '' ? (Bootstrap == 1 ? 'Não conheço' : Bootstrap == 2 ? 'Conheço um pouco' :  Bootstrap == 3 ? 'Sei fazer alguma coisa' : Bootstrap == 4 ? 'Sou bom' : Bootstrap == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Jquery:</span>{{Jquery != null && Pretensao != '' ? (Jquery == 1 ? 'Não conheço' : Jquery == 2 ? 'Conheço um pouco' :  Jquery == 3 ? 'Sei fazer alguma coisa' : Jquery == 4 ? 'Sou bom' : Jquery == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>AngularJS:</span>{{AngularJS != null && Pretensao != '' ? (AngularJS == 1 ? 'Não conheço' : AngularJS == 2 ? 'Conheço um pouco' :  AngularJS == 3 ? 'Sei fazer alguma coisa' : AngularJS == 4 ? 'Sou bom' : AngularJS == 5 ? 'Sou muito bom' : '') : ''}}</li>
+                                <li><span>Outro:</span>{{Outro}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-xl-2">
+                    &nbsp;
+                </div>
+                <div class="col-xl-8">
+                    <div style="margin: auto; width: 60%;">
+                        
+
+                        <button type="button" ng-if="!DadosPessoais" class="site-btn-cancel" data-dismiss="modal" onclick="location.href='@Url.Action("Index", "Programador")';return false;">
+                            Cancelar
+                        </button>
+
+                        <button type="button" ng-if="DadosPessoais" class="site-btn-new-left" data-dismiss="modal" ng-click="resetSave()">
+                           Voltar
+                        </button>
+                        <button data-dismiss="modal" ng-if="!DadosPessoais" ng-mouseover="AddNewForm1.$invalid" ng-disabled="AddNewForm1.$invalid" type="button" class="site-btn"
+                                id="btnSave" ng-click="save()">
+                            {{Conhecimentos == false ? 'Salvar' : 'Próxima'}}
+                        </button>
+                        <button data-dismiss="modal" ng-if="!InformacaoDeTrabalho" ng-mouseover="AddNewForm2.$invalid" ng-disabled="AddNewForm2.$invalid" type="button" class="site-btn"
+                                id="btnSave" ng-click="save()">
+                            {{Conhecimentos == false ? 'Salvar' : 'Próxima'}}
+                        </button>
+                        <button data-dismiss="modal" ng-if="!Conhecimentos" ng-mouseover="AddNewForm3.$invalid" ng-disabled="AddNewForm3.$invalid" type="button" class="site-btn"
+                                id="btnSave" ng-click="save()">
+                            {{Conhecimentos == false ? 'Salvar' : 'Próxima'}}
+                        </button>
+                    </div>
+                </div>
+                <div class="col-xl-2">
+                </div>
+                <div class="page-section home-page">
+                    <div id="snhvd">
+                        <span>{{DadosPessoais == false ? '01' : InformacaoDeTrabalho == false ? '02' : Conhecimentos == false ? '03' : '01'}}</span>/03
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/app/Services/ProgramadorServices.js"></script>
+    <script src="~/Scripts/app/Controller/ProgramadorController.js"></script>
+}
+
+

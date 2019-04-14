@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EasyProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Conhecimento">
+          <Key>
+            <PropertyRef Name="IDProgramador" />
+          </Key>
+          <Property Name="IDProgramador" Type="bigint" Nullable="false" />
+          <Property Name="Ionic" Type="int" Nullable="false" />
+          <Property Name="Reactjs" Type="int" Nullable="false" />
+          <Property Name="Reactnative" Type="int" Nullable="false" />
+          <Property Name="Android" Type="int" Nullable="false" />
+          <Property Name="IOS" Type="int" Nullable="false" />
+          <Property Name="HTML" Type="int" Nullable="false" />
+          <Property Name="CSS" Type="int" Nullable="false" />
+          <Property Name="Bootstrap" Type="int" Nullable="false" />
+          <Property Name="Jquery" Type="int" Nullable="false" />
+          <Property Name="AngularJS" Type="int" Nullable="false" />
+          <Property Name="Outro" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Programador">
+          <Key>
+            <PropertyRef Name="IDProgramador" />
+          </Key>
+          <Property Name="IDProgramador" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMail" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="Skype" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="Telefone" Type="bigint" Nullable="false" />
+          <Property Name="Linkedin" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="DisponibilidadeTrabalho" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="MelhorHorario" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="Pretensao" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CONHECIM_REFERENCE_PROGRAMA">
+          <End Role="Programador" Type="Self.Programador" Multiplicity="1" />
+          <End Role="Conhecimento" Type="Self.Conhecimento" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Programador">
+              <PropertyRef Name="IDProgramador" />
+            </Principal>
+            <Dependent Role="Conhecimento">
+              <PropertyRef Name="IDProgramador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EasyProjectModelStoreContainer">
+          <EntitySet Name="Conhecimento" EntityType="Self.Conhecimento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Programador" EntityType="Self.Programador" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CONHECIM_REFERENCE_PROGRAMA" Association="Self.FK_CONHECIM_REFERENCE_PROGRAMA">
+            <End Role="Programador" EntitySet="Programador" />
+            <End Role="Conhecimento" EntitySet="Conhecimento" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EasyProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EasyProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Conhecimentoes" EntityType="EasyProjectModel.Conhecimento" />
+          <EntitySet Name="Programadors" EntityType="EasyProjectModel.Programador" />
+          <AssociationSet Name="FK_CONHECIM_REFERENCE_PROGRAMA" Association="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA">
+            <End Role="Programador" EntitySet="Programadors" />
+            <End Role="Conhecimento" EntitySet="Conhecimentoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Conhecimento">
+          <Key>
+            <PropertyRef Name="IDProgramador" />
+          </Key>
+          <Property Name="IDProgramador" Type="Int64" Nullable="false" />
+          <Property Name="Ionic" Type="Int32" Nullable="false" />
+          <Property Name="Reactjs" Type="Int32" Nullable="false" />
+          <Property Name="Reactnative" Type="Int32" Nullable="false" />
+          <Property Name="Android" Type="Int32" Nullable="false" />
+          <Property Name="IOS" Type="Int32" Nullable="false" />
+          <Property Name="HTML" Type="Int32" Nullable="false" />
+          <Property Name="CSS" Type="Int32" Nullable="false" />
+          <Property Name="Bootstrap" Type="Int32" Nullable="false" />
+          <Property Name="Jquery" Type="Int32" Nullable="false" />
+          <Property Name="AngularJS" Type="Int32" Nullable="false" />
+          <Property Name="Outro" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Programador" Relationship="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA" FromRole="Conhecimento" ToRole="Programador" />
+        </EntityType>
+        <EntityType Name="Programador">
+          <Key>
+            <PropertyRef Name="IDProgramador" />
+          </Key>
+          <Property Name="IDProgramador" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMail" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Skype" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Telefone" Type="Int64" Nullable="false" />
+          <Property Name="Linkedin" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="DisponibilidadeTrabalho" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MelhorHorario" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Pretensao" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Conhecimento" Relationship="EasyProjectModel.FK_CONHECIM_REFERENCE_PROGRAMA" FromRole="Programador" ToRole="Conhecimento" />
+        </EntityType>
+        <Association Name="FK_CONHECIM_REFERENCE_PROGRAMA">
+          <End Type="EasyProjectModel.Programador" Role="Programador" Multiplicity="1" />
+          <End Type="EasyProjectModel.Conhecimento" Role="Conhecimento" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Programador">
+              <PropertyRef Name="IDProgramador" />
+            </Principal>
+            <Dependent Role="Conhecimento">
+              <PropertyRef Name="IDProgramador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EasyProjectModelStoreContainer" CdmEntityContainer="EasyProjectEntities">
+          <EntitySetMapping Name="Conhecimentoes">
+            <EntityTypeMapping TypeName="EasyProjectModel.Conhecimento">
+              <MappingFragment StoreEntitySet="Conhecimento">
+                <ScalarProperty Name="Outro" ColumnName="Outro" />
+                <ScalarProperty Name="AngularJS" ColumnName="AngularJS" />
+                <ScalarProperty Name="Jquery" ColumnName="Jquery" />
+                <ScalarProperty Name="Bootstrap" ColumnName="Bootstrap" />
+                <ScalarProperty Name="CSS" ColumnName="CSS" />
+                <ScalarProperty Name="HTML" ColumnName="HTML" />
+                <ScalarProperty Name="IOS" ColumnName="IOS" />
+                <ScalarProperty Name="Android" ColumnName="Android" />
+                <ScalarProperty Name="Reactnative" ColumnName="Reactnative" />
+                <ScalarProperty Name="Reactjs" ColumnName="Reactjs" />
+                <ScalarProperty Name="Ionic" ColumnName="Ionic" />
+                <ScalarProperty Name="IDProgramador" ColumnName="IDProgramador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Programadors">
+            <EntityTypeMapping TypeName="EasyProjectModel.Programador">
+              <MappingFragment StoreEntitySet="Programador">
+                <ScalarProperty Name="Pretensao" ColumnName="Pretensao" />
+                <ScalarProperty Name="MelhorHorario" ColumnName="MelhorHorario" />
+                <ScalarProperty Name="DisponibilidadeTrabalho" ColumnName="DisponibilidadeTrabalho" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Linkedin" ColumnName="Linkedin" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="IDProgramador" ColumnName="IDProgramador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

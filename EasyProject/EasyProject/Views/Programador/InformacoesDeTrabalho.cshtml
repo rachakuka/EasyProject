@@ -1,0 +1,80 @@
+﻿
+<form class="contact-form" name="AddNewForm2" novalidate>
+
+    <div ng-hide="InformacaoDeTrabalho">
+        <span class="span2">Qual é sua disponibilidade para trabalhar hoje?</span>
+        <span class="msg" style="color:red;" ng-show="AddNewForm2.DisponibilidadeTrabalho.$dirty && AddNewForm2.DisponibilidadeTrabalho.$invalid">Selecione pelo menos um campo (Disponibilidade de trabalho)</span>
+
+
+        <label class="checksRadios">
+            Até 4 horas por dia
+            <input type="radio" name="DisponibilidadeTrabalho" value="1" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            De 4 á 6 horas por dia
+            <input type="radio" name="DisponibilidadeTrabalho" value="2" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            De 6 á 8 horas por dia
+            <input type="radio" name="DisponibilidadeTrabalho" value="3" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Acima de 8 horas por dia (tem certeza?)
+            <input type="radio" name="DisponibilidadeTrabalho" value="4" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Apenas finais de semana
+            <input type="radio" name="DisponibilidadeTrabalho" value="5" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Horário a definir (Qualquer horário)
+            <input type="radio" name="DisponibilidadeTrabalho" value="6" ng-model="DisponibilidadeTrabalho">
+            <span class="checkmark"></span>
+        </label>
+
+        <span class="span2">Pra você qual é o melhor horário para trabalhar?</span>
+        <span class="msg" style="color:red;" ng-show="AddNewForm2.MelhorHorario.$dirty && AddNewForm2.MelhorHorario.$invalid">Selecione pelo menos um campo (Melhor horário para trabalhar)</span>
+        <label class="checksRadios">
+            Manhã (de 08:00 ás 12:00)
+            <input type="radio" name="MelhorHorario" value="1" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Tarde (de 13:00 ás 18:00)
+            <input type="radio" name="MelhorHorario" value="2" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Noite (de 19:00 as 22:00)
+            <input type="radio" name="MelhorHorario" value="3" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Madrugada (de 22:00 em diante)
+            <input type="radio" name="MelhorHorario" value="4" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Comercial (de 08:00 as 18:00)
+            <input type="radio" name="MelhorHorario" value="5" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+        <label class="checksRadios">
+            Horário a definir (Qualquer horário)
+            <input type="radio" name="MelhorHorario" value="6" ng-model="MelhorHorario">
+            <span class="checkmark"></span>
+        </label>
+
+
+        <div class="form-group">
+            <input name="Pretensao" ng-model="Pretensao" maxlength="3" type="number" placeholder="Qual sua pretensão salarial por hora?*" autocomplete="off" required />
+            <span class="msg" style="color:red;" ng-show="AddNewForm2.Pretensao.$dirty && AddNewForm2.Pretensao.$invalid">Pretenção salárial obrigatório limite máximo de caracteres (3)</span>
+        </div>
+
+    </div>
+</form>
