@@ -68,5 +68,8 @@ Editar candidato cadastrado
 
 ![alt text](prints/EdicaoDaLista.PNG)
 
+Deletar candidato cadastrado
+
+![alt text](printsNetwork/Capture5.PNG)
 
 
