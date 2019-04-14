@@ -18,9 +18,7 @@ Convenções/Metodologias:
 
 1 - Criação de banco
 
-Foi usado a convenção: https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md
-para desenvolver o banco de dados da aplicação.
-
+Foi usado a convenção: https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md para desenvolver o banco de dados da aplicação.
 
 2 - Convenção para escrita em C#
 
@@ -34,10 +32,6 @@ Estrutura e padrões usados para a criação do repository: https://www.dotnetcu
 4 - Services AngularJS 
 
 Foi utilizado um modelo do Github para a organização da parte AngularJS: https://github.com/qmmughal/AngularJsMVC
-
-5 - Alertas css ignorados
-
-https://github.com/CSSLint/csslint/wiki/Rules#compatible-vendor-prefixes
 
 6 - para as transações utilizei o EF6
 
